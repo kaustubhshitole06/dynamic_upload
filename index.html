@@ -366,7 +366,7 @@ document.getElementById('fieldsForm').addEventListener('submit', async function(
 		// Accept simple_id, simpleId, or id for compatibility
 		const simpleId = data.simple_id || data.simpleId || data.id;
 		if (simpleId) {
-			idBox.innerHTML = `✅ Your request number: <span id="requestSimpleIdValue">${simpleId}</span> <button class="copy-btn" onclick="copySimpleId()" title="Copy Number">📋 Copy</button>`;
+			idBox.innerHTML = `✅ Your request URL: <span id="requestSimpleIdValue">${simpleId}</span> <button class="copy-btn" onclick="copySimpleId()" title="Copy Number">📋 Copy</button>`;
 			idBox.style.display = 'inline-flex';
 		} else {
 			idBox.innerText = '❌ Error: No request number returned.';
