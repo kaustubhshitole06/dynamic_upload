@@ -10,19 +10,19 @@
 		html, body {
 			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 			margin: 0;
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-			color: #1a202c;
+			background: linear-gradient(135deg, #e3eafc 0%, #f7fafc 100%);
+			color: #222;
 			min-height: 100vh;
 		}
 		.container {
 			max-width: 720px;
 			margin: 2em auto;
-			background: rgba(255, 255, 255, 0.95);
-			backdrop-filter: blur(20px);
-			border-radius: 24px;
-			box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 8px 32px rgba(0,0,0,0.08);
-			padding: 3em 2.5em;
-			border: 1px solid rgba(255,255,255,0.2);
+			background: #fff;
+			backdrop-filter: blur(12px);
+			border-radius: 20px;
+			box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+			padding: 2.5em 2em;
+			border: 1px solid #e3eafc;
 		}
 		h2 {
 			color: #2563eb;
@@ -30,36 +30,16 @@
 			font-size: 1.75em;
 			font-weight: 700;
 			letter-spacing: -0.025em;
-			background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-		}
-		.field-list {
-			margin-bottom: 1.2em;
-		}
-		.field-input {
-			width: 100%;
-			padding: 0.875em 1.25em;
-			border: 2px solid #e5e7eb;
+			background: none;
 			border-radius: 12px;
-			font-size: 1rem;
-			margin-bottom: 1em;
-			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-			background: rgba(255, 255, 255, 0.9);
-			backdrop-filter: blur(10px);
-		}
-		.field-input:focus {
-			outline: none;
-			border-color: #3b82f6;
-			box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+			box-shadow: none;
 			transform: translateY(-1px);
 		}
 		.btn-primary {
-			background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-			color: #ffffff;
+			background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+			color: #fff;
 			border: none;
-			border-radius: 12px;
+			border-radius: 10px;
 			padding: 0.875em 2em;
 			font-size: 1rem;
 			font-weight: 600;
@@ -67,11 +47,12 @@
 			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 			margin-right: 0.75em;
 			margin-bottom: 0.75em;
-			box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
+			box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
 		}
 		.btn-primary:hover {
 			transform: translateY(-2px);
-			box-shadow: 0 8px 16px rgba(59, 130, 246, 0.4);
+			box-shadow: 0 4px 16px rgba(59, 130, 246, 0.18);
+			background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
 		}
 		.btn-primary:disabled {
 			opacity: 0.6;
@@ -79,42 +60,43 @@
 			transform: none;
 		}
 		.btn-secondary {
-			background: rgba(248, 250, 252, 0.8);
-			color: #64748b;
-			border: 2px solid #e2e8f0;
-			border-radius: 10px;
+			background: #f3f6fa;
+			color: #2563eb;
+			border: 2px solid #e3eafc;
+			border-radius: 8px;
 			padding: 0.625em 1.25em;
-			font-size: 0.925rem;
+			font-size: 0.95rem;
 			font-weight: 500;
 			cursor: pointer;
 			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 			margin-left: 0.5em;
-			backdrop-filter: blur(10px);
+			backdrop-filter: blur(6px);
 		}
 		.btn-secondary:hover {
-			background: rgba(226, 232, 240, 0.9);
-			border-color: #cbd5e1;
+			background: #e3eafc;
+			border-color: #2563eb;
+			color: #174ea6;
 			transform: translateY(-1px);
 		}
 		.id-box {
 			margin-top: 2em;
 			font-weight: 600;
-			color: #1e40af;
-			background: linear-gradient(135deg, rgba(147, 197, 253, 0.2) 0%, rgba(196, 181, 253, 0.2) 100%);
-			border: 2px solid rgba(147, 197, 253, 0.3);
-			border-radius: 16px;
+			color: #2563eb;
+			background: #f3f6fa;
+			border: 2px solid #e3eafc;
+			border-radius: 14px;
 			padding: 1.25em 1.5em;
 			display: inline-flex;
 			align-items: center;
 			gap: 1em;
 			font-size: 1.125rem;
 			user-select: all;
-			box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
-			backdrop-filter: blur(20px);
+			box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+			backdrop-filter: blur(8px);
 		}
 		.copy-btn {
-			background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-			color: #ffffff;
+			background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+			color: #fff;
 			border: none;
 			border-radius: 8px;
 			padding: 0.5em 1em;
@@ -123,11 +105,12 @@
 			margin-left: 0.5em;
 			cursor: pointer;
 			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-			box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+			box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
 		}
 		.copy-btn:hover {
 			transform: translateY(-2px);
-			box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+			box-shadow: 0 4px 16px rgba(59, 130, 246, 0.18);
+			background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
 		}
 		.loading-spinner {
 			display: inline-block;
@@ -144,59 +127,60 @@
 			100% { transform: rotate(360deg); }
 		}
 		.single-upload-form {
-			background: rgba(248, 250, 252, 0.8);
-			backdrop-filter: blur(10px);
-			border: 1px solid rgba(226, 232, 240, 0.6);
-			border-radius: 16px;
-			padding: 1.5em;
-			margin-bottom: 1.5em;
+			background: #f7fafc;
+			backdrop-filter: blur(6px);
+			border: 1px solid #e3eafc;
+			border-radius: 12px;
+			padding: 1.25em;
+			margin-bottom: 1.25em;
 			display: flex;
 			align-items: center;
-			gap: 1.5em;
-			box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+			gap: 1.25em;
+			box-shadow: 0 2px 8px rgba(59, 130, 246, 0.06);
 			flex-wrap: wrap;
 			transition: all 0.3s ease;
 		}
 		.single-upload-form:hover {
 			transform: translateY(-2px);
-			box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+			box-shadow: 0 4px 16px rgba(59, 130, 246, 0.10);
 		}
 		.single-upload-form label {
 			flex: 1 1 200px;
 			font-size: 1.1rem;
 			font-weight: 600;
-			color: #374151;
+			color: #2563eb;
 			display: flex;
 			align-items: center;
 			gap: 1em;
 		}
 		.single-upload-form input[type="file"] {
 			font-size: 0.95rem;
-			background: rgba(255, 255, 255, 0.9);
-			border-radius: 10px;
-			border: 2px solid #e5e7eb;
+			background: #fff;
+			border-radius: 8px;
+			border: 2px solid #e3eafc;
 			padding: 0.5em 0.75em;
 			transition: all 0.3s ease;
 		}
 		.single-upload-form input[type="file"]:focus {
-			border-color: #3b82f6;
-			box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+			border-color: #2563eb;
+			box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.10);
 		}
 		.single-upload-form button {
-			background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-			color: #ffffff;
+			background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+			color: #fff;
 			border: none;
-			border-radius: 10px;
+			border-radius: 8px;
 			padding: 0.75em 1.5em;
 			cursor: pointer;
 			font-weight: 600;
 			font-size: 0.95rem;
 			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-			box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+			box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
 		}
 		.single-upload-form button:hover {
 			transform: translateY(-1px);
-			box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+			box-shadow: 0 4px 16px rgba(59, 130, 246, 0.18);
+			background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
 		}
 		.single-upload-form button:disabled {
 			opacity: 0.6;
@@ -207,7 +191,7 @@
 			min-width: 120px;
 			font-size: 0.95rem;
 			font-weight: 600;
-			color: #047857;
+			color: #2563eb;
 			margin-left: 0.75em;
 			display: flex;
 			align-items: center;
@@ -217,7 +201,7 @@
 			color: #dc2626;
 		}
 		.upload-status a {
-			color: #3b82f6;
+			color: #2563eb;
 			text-decoration: none;
 			margin-left: 0.5em;
 			display: flex;
@@ -229,7 +213,7 @@
 			transition: all 0.2s ease;
 		}
 		.upload-status a:hover {
-			background: rgba(59, 130, 246, 0.1);
+			background: #e3eafc;
 			text-decoration: underline;
 		}
 		.file-icon {
@@ -238,14 +222,15 @@
 			vertical-align: middle;
 			margin-right: 0.1em;
 			display: inline-block;
+			color: #2563eb;
 		}
 		.section {
-			margin-bottom: 2.5em;
+			margin-bottom: 2em;
 		}
 		@media (max-width: 768px) {
 			.container {
 				margin: 1em 0.75em;
-				padding: 2em 1.5em;
+				padding: 1.5em 1em;
 			}
 			h2 {
 				font-size: 1.5rem;
@@ -253,8 +238,8 @@
 			.single-upload-form {
 				flex-direction: column;
 				align-items: stretch;
-				gap: 1.25em;
-				padding: 1.25em;
+				gap: 1em;
+				padding: 1em;
 			}
 			.single-upload-form label {
 				flex: 1 1 100%;
@@ -306,8 +291,8 @@
 	<div class="section">
 		<h2>📤 Upload Files for Your Request</h2>
 		<form id="idForm" style="margin-bottom:1.5em; display: flex; align-items: center; gap: 1em; flex-wrap: wrap;">
-			<label for="requestId" style="font-weight: 600;">Enter your request ID:</label>
-			<input type="text" id="requestId" required class="field-input" style="flex: 1; min-width: 200px; margin-bottom: 0;">
+			<label for="simpleId" style="font-weight: 600;">Enter your request number:</label>
+			<input type="number" id="simpleId" required class="field-input" style="flex: 1; min-width: 200px; margin-bottom: 0;" min="1" step="1" placeholder="e.g. 1">
 			<button type="submit" class="btn-primary" id="fetchBtn">🔍 Fetch Fields</button>
 		</form>
 		<div id="uploadFields"></div>
@@ -316,12 +301,35 @@
 </div>
 
 <script>
+// Auto-fetch fields if simple_id is present in the URL
+// Auto-fetch fields if simple_id is present in the URL
+(function autoFetchFieldsFromUrl() {
+	const params = new URLSearchParams(window.location.search);
+	let simpleId = params.get('simple_id');
+	if (!simpleId) {
+		// Try to get simple_id from path (e.g. /123)
+		const pathParts = window.location.pathname.split('/').filter(Boolean);
+		const lastPart = pathParts[pathParts.length - 1];
+		if (lastPart && /^\d+$/.test(lastPart)) {
+			simpleId = lastPart;
+		}
+	}
+	if (simpleId) {
+		const input = document.getElementById('simpleId');
+		if (input) input.value = simpleId;
+		// Wait for DOM to be ready, then trigger fetch fields automatically
+		window.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('idForm').dispatchEvent(new Event('submit'));
+		});
+	}
+})();
 // SVG for file icon
 const fileIconSVG = `<svg class="file-icon" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2" stroke="#2d6cdf"/><path d="M9 7h6M9 11h6M9 15h3" stroke="#2d6cdf"/></svg>`;
 // Replace with your actual n8n webhook URL
 const N8N_WEBHOOK_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/995c9faa-c78e-47e4-9353-e3b6256975f5';
 const N8N_FETCH_FIELDS_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/fetch-fields';
 const N8N_UPLOAD_FILES_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/upload-file';
+const N8N_CHECK_FIELD_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/check-field';
 
 function addField() {
 	const div = document.createElement('div');
@@ -353,20 +361,19 @@ document.getElementById('fieldsForm').addEventListener('submit', async function(
 		});
 		const data = await res.json();
 		const idBox = document.getElementById('idBox');
-		const submitBtn = document.getElementById('submitBtn');
 		submitBtn.disabled = false;
 		submitBtn.innerHTML = '🚀 Create Request';
-		
-		if (data.id) {
-			idBox.innerHTML = `✅ Your request ID: <span id="requestIdValue">${data.id}</span> <button class="copy-btn" onclick="copyRequestId()" title="Copy ID">📋 Copy</button>`;
+		// Accept simple_id, simpleId, or id for compatibility
+		const simpleId = data.simple_id || data.simpleId || data.id;
+		if (simpleId) {
+			idBox.innerHTML = `✅ Your request number: <span id="requestSimpleIdValue">${simpleId}</span> <button class="copy-btn" onclick="copySimpleId()" title="Copy Number">📋 Copy</button>`;
 			idBox.style.display = 'inline-flex';
 		} else {
-			idBox.innerText = '❌ Error: No ID returned.';
+			idBox.innerText = '❌ Error: No request number returned.';
 			idBox.style.display = 'inline-flex';
 		}
 	} catch (err) {
 		const idBox = document.getElementById('idBox');
-		const submitBtn = document.getElementById('submitBtn');
 		submitBtn.disabled = false;
 		submitBtn.innerHTML = '🚀 Create Request';
 		idBox.innerText = '❌ Error submitting request.';
@@ -374,8 +381,8 @@ document.getElementById('fieldsForm').addEventListener('submit', async function(
 	}
 });
 
-function copyRequestId() {
-	const idSpan = document.getElementById('requestIdValue');
+function copySimpleId() {
+	const idSpan = document.getElementById('requestSimpleIdValue');
 	if (!idSpan) return;
 	const text = idSpan.innerText;
 	navigator.clipboard.writeText(text).then(() => {
@@ -387,28 +394,24 @@ function copyRequestId() {
 
 document.getElementById('idForm').addEventListener('submit', async function(e) {
 	e.preventDefault();
-	const id = document.getElementById('requestId').value.trim();
-	if (!id) return;
-	
+	const simpleId = document.getElementById('simpleId').value.trim();
+	if (!simpleId) return;
 	// Add loading state
 	const fetchBtn = document.getElementById('fetchBtn');
 	fetchBtn.disabled = true;
 	fetchBtn.innerHTML = '<span class="loading-spinner"></span>Fetching...';
 	document.getElementById('uploadStatus').style.display = 'none';
 	document.getElementById('uploadFields').innerHTML = '';
-	
 	try {
 		const res = await fetch(N8N_FETCH_FIELDS_URL, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ id })
+			body: JSON.stringify({ simple_id: simpleId })
 		});
 		const data = await res.json();
 		const uploadFields = document.getElementById('uploadFields');
-		const fetchBtn = document.getElementById('fetchBtn');
 		fetchBtn.disabled = false;
 		fetchBtn.innerHTML = '🔍 Fetch Fields';
-		
 		uploadFields.innerHTML = '';
 		if (data.fields && Array.isArray(data.fields)) {
 			data.fields.forEach(field => {
@@ -423,57 +426,91 @@ document.getElementById('idForm').addEventListener('submit', async function(e) {
 				uploadFields.appendChild(div);
 			});
 			// Attach event listeners to each upload form
-			document.querySelectorAll('.single-upload-form').forEach(form => {
-				form.addEventListener('submit', async function(ev) {
-					ev.preventDefault();
-					const field = this.getAttribute('data-field');
-					const fileInput = this.querySelector('input[type="file"]');
-					const statusSpan = this.querySelector('.upload-status');
-					if (!fileInput.files.length) {
-						statusSpan.textContent = 'Please select a file.';
-						statusSpan.classList.add('error');
-						return;
-					}
-					statusSpan.innerHTML = `<span class="loading-spinner"></span><span style="color:#2d6cdf;">Uploading...</span>`;
-					statusSpan.classList.remove('error');
-					const uploadBtn = this.querySelector('button[type="submit"]');
-					uploadBtn.disabled = true;
-					const formData = new FormData();
-					formData.append('id', id);
-					formData.append('field', field);
-					formData.append('file', fileInput.files[0]);
-					try {
-						const res = await fetch(N8N_UPLOAD_FILES_URL, {
-							method: 'POST',
-							body: formData
-						});
-						const data = await res.json();
-						uploadBtn.disabled = false;
-						
-						if (data.success) {
-							if (data.url) {
-								statusSpan.innerHTML = `✅ <span style="color:#1b7e2b;">Uploaded!</span> <a href="${data.url}" target="_blank">${fileIconSVG}View File</a>`;
-								statusSpan.classList.remove('error');
-							} else {
-								statusSpan.innerHTML = `✅ <span style="color:#1b7e2b;">Uploaded!</span>`;
-								statusSpan.classList.remove('error');
-							}
+						document.querySelectorAll('.single-upload-form').forEach(form => {
+			form.addEventListener('submit', async function(ev) {
+				ev.preventDefault();
+				const field = this.getAttribute('data-field');
+				const fileInput = this.querySelector('input[type="file"]');
+				const statusSpan = this.querySelector('.upload-status');
+				if (!fileInput.files.length) {
+					statusSpan.textContent = 'Please select a file.';
+					statusSpan.classList.add('error');
+					return;
+				}
+				statusSpan.innerHTML = `<span class="loading-spinner"></span><span style="color:#2d6cdf;">Checking...</span>`;
+				statusSpan.classList.remove('error');
+				const uploadBtn = this.querySelector('button[type="submit"]');
+				uploadBtn.disabled = true;
+
+				// 1. Check if field is null via n8n webhook
+				let canUpload = false;
+				let existingUrl = '';
+				try {
+					const res = await fetch(N8N_CHECK_FIELD_URL, {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({ simple_id: simpleId, field })
+					});
+					const data = await res.json();
+					// Expecting an array: [{ exists: true/false, url?: string }]
+					if (Array.isArray(data) && data.length > 0) {
+						if (data[0].exists === false) {
+							canUpload = true;
 						} else {
-							statusSpan.innerHTML = `❌ <span style="color:#c0392b;">${data.message ? `Upload failed: ${data.message}` : 'Upload failed.'}</span>`;
-							statusSpan.classList.add('error');
+							canUpload = false;
+							existingUrl = data[0].url || '';
 						}
-					} catch (err) {
-						uploadBtn.disabled = false;
-						statusSpan.innerHTML = `❌ <span style="color:#c0392b;">Error uploading.</span>`;
+					} else {
+						// Fallback: if response is not as expected, allow upload
+						canUpload = true;
+					}
+				} catch (err) {
+					// If check fails, allow upload (or handle as you wish)
+					canUpload = true;
+				}
+
+				if (!canUpload) {
+					statusSpan.innerHTML = `⚠️ <span style=\"color:#c0392b;\">A file for \"${field}\" is already uploaded.</span> ${existingUrl ? `<a href=\"${existingUrl}\" target=\"_blank\">${fileIconSVG}View Existing File</a>` : ''}`;
+					uploadBtn.disabled = false;
+					return;
+				}
+
+				// 2. Proceed with upload as before
+				statusSpan.innerHTML = `<span class=\"loading-spinner\"></span><span style=\"color:#2d6cdf;\">Uploading...</span>`;
+				const formData = new FormData();
+				formData.append('simple_id', simpleId);
+				formData.append('field', field);
+				formData.append('file', fileInput.files[0]);
+				try {
+					const res = await fetch(N8N_UPLOAD_FILES_URL, {
+						method: 'POST',
+						body: formData
+					});
+					const data = await res.json();
+					uploadBtn.disabled = false;
+					if (data.success) {
+						if (data.url) {
+							statusSpan.innerHTML = `✅ <span style=\"color:#1b7e2b;\">Uploaded!</span> <a href=\"${data.url}\" target=\"_blank\">${fileIconSVG}View File</a>`;
+							statusSpan.classList.remove('error');
+						} else {
+							statusSpan.innerHTML = `✅ <span style=\"color:#1b7e2b;\">Uploaded!</span>`;
+							statusSpan.classList.remove('error');
+						}
+					} else {
+						statusSpan.innerHTML = `❌ <span style=\"color:#c0392b;\">${data.message ? `Upload failed: ${data.message}` : 'Upload failed.'}</span>`;
 						statusSpan.classList.add('error');
 					}
-				});
+				} catch (err) {
+					uploadBtn.disabled = false;
+					statusSpan.innerHTML = `❌ <span style=\"color:#c0392b;\">File Already uploaded.</span>`;
+					statusSpan.classList.add('error');
+				}
 			});
+						});
 		} else {
-			uploadFields.innerHTML = '<div style="text-align: center; padding: 2em; color: #64748b;">❌ No fields found for this ID.</div>';
+			uploadFields.innerHTML = '<div style="text-align: center; padding: 2em; color: #64748b;">❌ No fields found for this request number.</div>';
 		}
 	} catch (err) {
-		const fetchBtn = document.getElementById('fetchBtn');
 		fetchBtn.disabled = false;
 		fetchBtn.innerHTML = '🔍 Fetch Fields';
 		document.getElementById('uploadStatus').innerText = '❌ Error fetching fields.';
