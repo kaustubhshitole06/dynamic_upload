@@ -1,29 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Request Fields</title>
 	<style>
-		html, body {
+		html,
+		body {
 			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 			margin: 0;
 			background: linear-gradient(135deg, #e3eafc 0%, #f7fafc 100%);
 			color: #222;
 			min-height: 100vh;
 		}
+
 		.container {
 			max-width: 720px;
 			margin: 2em auto;
 			background: #fff;
 			backdrop-filter: blur(12px);
 			border-radius: 20px;
-			box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
 			padding: 2.5em 2em;
 			border: 1px solid #e3eafc;
 		}
+
 		h2 {
 			color: #2563eb;
 			margin-top: 0;
@@ -35,6 +38,7 @@
 			box-shadow: none;
 			transform: translateY(-1px);
 		}
+
 		.btn-primary {
 			background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
 			color: #fff;
@@ -49,16 +53,19 @@
 			margin-bottom: 0.75em;
 			box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
 		}
+
 		.btn-primary:hover {
 			transform: translateY(-2px);
 			box-shadow: 0 4px 16px rgba(59, 130, 246, 0.18);
 			background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
 		}
+
 		.btn-primary:disabled {
 			opacity: 0.6;
 			cursor: not-allowed;
 			transform: none;
 		}
+
 		.btn-secondary {
 			background: #f3f6fa;
 			color: #2563eb;
@@ -72,12 +79,14 @@
 			margin-left: 0.5em;
 			backdrop-filter: blur(6px);
 		}
+
 		.btn-secondary:hover {
 			background: #e3eafc;
 			border-color: #2563eb;
 			color: #174ea6;
 			transform: translateY(-1px);
 		}
+
 		.id-box {
 			margin-top: 2em;
 			font-weight: 600;
@@ -94,6 +103,7 @@
 			box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
 			backdrop-filter: blur(8px);
 		}
+
 		.copy-btn {
 			background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
 			color: #fff;
@@ -107,11 +117,13 @@
 			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 			box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
 		}
+
 		.copy-btn:hover {
 			transform: translateY(-2px);
 			box-shadow: 0 4px 16px rgba(59, 130, 246, 0.18);
 			background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
 		}
+
 		.loading-spinner {
 			display: inline-block;
 			width: 18px;
@@ -122,10 +134,17 @@
 			animation: spin 1s linear infinite;
 			margin-right: 0.5em;
 		}
+
 		@keyframes spin {
-			0% { transform: rotate(0deg); }
-			100% { transform: rotate(360deg); }
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
 		}
+
 		.single-upload-form {
 			background: #f7fafc;
 			backdrop-filter: blur(6px);
@@ -140,10 +159,12 @@
 			flex-wrap: wrap;
 			transition: all 0.3s ease;
 		}
+
 		.single-upload-form:hover {
 			transform: translateY(-2px);
 			box-shadow: 0 4px 16px rgba(59, 130, 246, 0.10);
 		}
+
 		.single-upload-form label {
 			flex: 1 1 200px;
 			font-size: 1.1rem;
@@ -153,6 +174,7 @@
 			align-items: center;
 			gap: 1em;
 		}
+
 		.single-upload-form input[type="file"] {
 			font-size: 0.95rem;
 			background: #fff;
@@ -161,10 +183,12 @@
 			padding: 0.5em 0.75em;
 			transition: all 0.3s ease;
 		}
+
 		.single-upload-form input[type="file"]:focus {
 			border-color: #2563eb;
 			box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.10);
 		}
+
 		.single-upload-form button {
 			background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
 			color: #fff;
@@ -177,16 +201,19 @@
 			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 			box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
 		}
+
 		.single-upload-form button:hover {
 			transform: translateY(-1px);
 			box-shadow: 0 4px 16px rgba(59, 130, 246, 0.18);
 			background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
 		}
+
 		.single-upload-form button:disabled {
 			opacity: 0.6;
 			cursor: not-allowed;
 			transform: none;
 		}
+
 		.upload-status {
 			min-width: 120px;
 			font-size: 0.95rem;
@@ -197,9 +224,11 @@
 			align-items: center;
 			gap: 0.5em;
 		}
+
 		.upload-status.error {
 			color: #dc2626;
 		}
+
 		.upload-status a {
 			color: #2563eb;
 			text-decoration: none;
@@ -212,10 +241,12 @@
 			border-radius: 6px;
 			transition: all 0.2s ease;
 		}
+
 		.upload-status a:hover {
 			background: #e3eafc;
 			text-decoration: underline;
 		}
+
 		.file-icon {
 			width: 1.1em;
 			height: 1.1em;
@@ -224,300 +255,377 @@
 			display: inline-block;
 			color: #2563eb;
 		}
+
 		.section {
 			margin-bottom: 2em;
 		}
+
 		@media (max-width: 768px) {
 			.container {
 				margin: 1em 0.75em;
 				padding: 1.5em 1em;
 			}
+
 			h2 {
 				font-size: 1.5rem;
 			}
+
 			.single-upload-form {
 				flex-direction: column;
 				align-items: stretch;
 				gap: 1em;
 				padding: 1em;
 			}
+
 			.single-upload-form label {
 				flex: 1 1 100%;
 				margin-bottom: 0.75em;
 			}
+
 			.field-input {
 				font-size: 1.125rem;
 				padding: 1em;
 			}
-			.btn-primary, .btn-secondary {
+
+			.btn-primary,
+			.btn-secondary {
 				width: 100%;
 				padding: 1em;
 				margin: 0.5em 0;
 				font-size: 1rem;
 			}
+
 			#idForm {
 				flex-direction: column;
 				align-items: stretch;
 				gap: 1em;
 			}
+
 			#idForm input {
 				min-width: auto;
 				margin-bottom: 0.75em;
 			}
+
 			.upload-status {
 				margin-left: 0;
 				margin-top: 0.75em;
 				justify-content: flex-start;
 			}
+
 			.id-box {
 				padding: 1em;
 				font-size: 1rem;
 			}
 		}
 	</style>
+
 <body>
-<div class="container">
-	<div class="section">
-		<h2>📋 Enter the fields you want to upload</h2>
-		<form id="fieldsForm">
-			<div class="field-list" id="fieldInputs">
-				<input type="text" name="field" placeholder="e.g. PAN" required class="field-input">
+	<div class="container">
+		<div class="section">
+			<h2>📋 Enter the fields you want to upload</h2>
+			<form id="fieldsForm">
+				<div class="field-list" id="fieldInputs">
+					<input type="text" name="field" placeholder="e.g. PAN" required class="field-input">
+				</div>
+				<button type="button" onclick="addField()" class="btn-secondary">➕ Add Another Field</button>
+				<button type="submit" class="btn-primary" id="submitBtn">🚀 Create Request</button>
+			</form>
+			<div class="id-box" id="idBox" style="display: none;"></div>
+		</div>
+		<div class="section">
+			<h2>📤 Upload Files for Your Request</h2>
+			<form id="idForm"
+				style="margin-bottom:1.5em; display: flex; align-items: center; gap: 1em; flex-wrap: wrap;">
+				<label for="simpleId" style="font-weight: 600;">Enter your request number:</label>
+				<input type="number" id="simpleId" required class="field-input"
+					style="flex: 1; min-width: 200px; margin-bottom: 0;" min="1" step="1" placeholder="e.g. 1">
+				<button type="submit" class="btn-primary" id="fetchBtn">🔍 Fetch Fields</button>
+			</form>
+			<div id="uploadFields"></div>
+			<div class="id-box" id="uploadStatus" style="display: none;"></div>
+			<div id="finalSubmitContainer" style="text-align:center; margin-top:2em; display:none;">
+				<button id="finalSubmitBtn" class="btn-primary" style="min-width:180px;">Submit</button>
 			</div>
-			<button type="button" onclick="addField()" class="btn-secondary">➕ Add Another Field</button>
-			<button type="submit" class="btn-primary" id="submitBtn">🚀 Create Request</button>
-		</form>
-		<div class="id-box" id="idBox" style="display: none;"></div>
+		</div>
 	</div>
-	<div class="section">
-		<h2>📤 Upload Files for Your Request</h2>
-		<form id="idForm" style="margin-bottom:1.5em; display: flex; align-items: center; gap: 1em; flex-wrap: wrap;">
-			<label for="simpleId" style="font-weight: 600;">Enter your request number:</label>
-			<input type="number" id="simpleId" required class="field-input" style="flex: 1; min-width: 200px; margin-bottom: 0;" min="1" step="1" placeholder="e.g. 1">
-			<button type="submit" class="btn-primary" id="fetchBtn">🔍 Fetch Fields</button>
-		</form>
-		<div id="uploadFields"></div>
-		<div class="id-box" id="uploadStatus" style="display: none;"></div>
-	</div>
-</div>
 
-<script>
-// Auto-fetch fields if simple_id is present in the URL
-// Auto-fetch fields if simple_id is present in the URL
-(function autoFetchFieldsFromUrl() {
-	const params = new URLSearchParams(window.location.search);
-	let simpleId = params.get('simple_id');
-	if (!simpleId) {
-		// Try to get simple_id from path (e.g. /123)
-		const pathParts = window.location.pathname.split('/').filter(Boolean);
-		const lastPart = pathParts[pathParts.length - 1];
-		if (lastPart && /^\d+$/.test(lastPart)) {
-			simpleId = lastPart;
+	<script>
+		// Final submit button handler
+		document.addEventListener('DOMContentLoaded', function() {
+			const finalSubmitContainer = document.getElementById('finalSubmitContainer');
+			const finalSubmitBtn = document.getElementById('finalSubmitBtn');
+			if(finalSubmitBtn) {
+				finalSubmitBtn.addEventListener('click', function(e) {
+					e.preventDefault();
+					// Check if all fields are uploaded
+					const uploadForms = document.querySelectorAll('.single-upload-form');
+					let allUploaded = true;
+					uploadForms.forEach(form => {
+						const statusSpan = form.querySelector('.upload-status');
+						// Check for success indicator
+						if(!statusSpan || !statusSpan.innerHTML.includes('Uploaded!')) {
+							allUploaded = false;
+						}
+					});
+					if(allUploaded && uploadForms.length > 0) {
+						alert('Submitted successfully!');
+					} else {
+						alert('Please fill and upload all fields before submitting.');
+					}
+				});
+			}
+			// Show submit button after fields are fetched
+			const fetchBtn = document.getElementById('fetchBtn');
+			if(fetchBtn) {
+				fetchBtn.addEventListener('click', function() {
+					setTimeout(function() {
+						if(finalSubmitContainer) finalSubmitContainer.style.display = 'block';
+					}, 500); // Wait for fields to render
+				});
+			}
+			// Also show if auto-fetch
+			const idForm = document.getElementById('idForm');
+			if(idForm) {
+				idForm.addEventListener('submit', function() {
+					setTimeout(function() {
+						if(finalSubmitContainer) finalSubmitContainer.style.display = 'block';
+					}, 500);
+				});
+			}
+		});
+		// Auto-fetch fields if simple_id is present in the URL
+		// Auto-fetch fields if simple_id is present in the URL
+		(function autoFetchFieldsFromUrl() {
+			const params = new URLSearchParams(window.location.search);
+			let simpleId = params.get('simple_id');
+
+			if(!simpleId) {
+				// Try to get from path e.g. /123
+				const pathParts = window.location.pathname.split('/').filter(Boolean);
+				const lastPart = pathParts[pathParts.length - 1];
+				if(lastPart && /^\d+$/.test(lastPart)) {
+					simpleId = lastPart;
+				}
+			}
+
+			const fieldsSection = document.querySelector('.section:first-of-type'); // first section
+			const uploadSection = document.querySelector('.section:nth-of-type(2)'); // second section
+
+			if(simpleId) {
+				// URL contains a request id → show upload section only
+				if(fieldsSection) fieldsSection.style.display = 'none';
+				if(uploadSection) uploadSection.style.display = 'block';
+
+				const input = document.getElementById('simpleId');
+				if(input) input.value = simpleId;
+
+				window.addEventListener('DOMContentLoaded', function() {
+					document.getElementById('idForm').dispatchEvent(new Event('submit'));
+				});
+			} else {
+				// Normal open → show fields section only
+				if(fieldsSection) fieldsSection.style.display = 'block';
+				if(uploadSection) uploadSection.style.display = 'none';
+			}
+		})();
+
+		// SVG for file icon
+		const fileIconSVG = `<svg class="file-icon" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2" stroke="#2d6cdf"/><path d="M9 7h6M9 11h6M9 15h3" stroke="#2d6cdf"/></svg>`;
+		// Replace with your actual n8n webhook URL
+		const N8N_WEBHOOK_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/995c9faa-c78e-47e4-9353-e3b6256975f5';
+		const N8N_FETCH_FIELDS_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/fetch-fields';
+		const N8N_UPLOAD_FILES_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/upload-file';
+		const N8N_CHECK_FIELD_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/check-field';
+
+		function addField() {
+			const div = document.createElement('div');
+			div.innerHTML = '<input type="text" name="field" placeholder="e.g. Aadhaar" required class="field-input"> <button type="button" onclick="this.parentNode.remove()" class="btn-secondary">❌ Remove</button>';
+			document.getElementById('fieldInputs').appendChild(div);
 		}
-	}
-	if (simpleId) {
-		const input = document.getElementById('simpleId');
-		if (input) input.value = simpleId;
-		// Wait for DOM to be ready, then trigger fetch fields automatically
-		window.addEventListener('DOMContentLoaded', function() {
-			document.getElementById('idForm').dispatchEvent(new Event('submit'));
-		});
-	}
-})();
-// SVG for file icon
-const fileIconSVG = `<svg class="file-icon" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2" stroke="#2d6cdf"/><path d="M9 7h6M9 11h6M9 15h3" stroke="#2d6cdf"/></svg>`;
-// Replace with your actual n8n webhook URL
-const N8N_WEBHOOK_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/995c9faa-c78e-47e4-9353-e3b6256975f5';
-const N8N_FETCH_FIELDS_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/fetch-fields';
-const N8N_UPLOAD_FILES_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/upload-file';
-const N8N_CHECK_FIELD_URL = 'https://n8n.srv898271.hstgr.cloud/webhook/check-field';
 
-function addField() {
-	const div = document.createElement('div');
-	div.innerHTML = '<input type="text" name="field" placeholder="e.g. Aadhaar" required class="field-input"> <button type="button" onclick="this.parentNode.remove()" class="btn-secondary">❌ Remove</button>';
-	document.getElementById('fieldInputs').appendChild(div);
-}
+		document.getElementById('fieldsForm').addEventListener('submit', async function(e) {
+			e.preventDefault();
+			const fields = Array.from(document.querySelectorAll('input[name="field"]'))
+				.map(input => input.value.trim())
+				.filter(Boolean);
+			if(fields.length === 0) {
+				alert('Please enter at least one field.');
+				return;
+			}
 
-document.getElementById('fieldsForm').addEventListener('submit', async function(e) {
-	e.preventDefault();
-	const fields = Array.from(document.querySelectorAll('input[name="field"]'))
-		.map(input => input.value.trim())
-		.filter(Boolean);
-	if (fields.length === 0) {
-		alert('Please enter at least one field.');
-		return;
-	}
-	
-	// Add loading state
-	const submitBtn = document.getElementById('submitBtn');
-	submitBtn.disabled = true;
-	submitBtn.innerHTML = '<span class="loading-spinner"></span>Creating...';
-	document.getElementById('idBox').style.display = 'none';
-	
-	try {
-		const res = await fetch(N8N_WEBHOOK_URL, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ fields })
+			// Add loading state
+			const submitBtn = document.getElementById('submitBtn');
+			submitBtn.disabled = true;
+			submitBtn.innerHTML = '<span class="loading-spinner"></span>Creating...';
+			document.getElementById('idBox').style.display = 'none';
+
+			try {
+				const res = await fetch(N8N_WEBHOOK_URL, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ fields })
+				});
+				const data = await res.json();
+				const idBox = document.getElementById('idBox');
+				submitBtn.disabled = false;
+				submitBtn.innerHTML = '🚀 Create Request';
+				// Accept simple_id, simpleId, or id for compatibility
+				const simpleId = data.simple_id || data.simpleId || data.id;
+				if(simpleId) {
+					idBox.innerHTML = `✅ Your request URL: <span id="requestSimpleIdValue">${simpleId}</span> <button class="copy-btn" onclick="copySimpleId()" title="Copy Number">📋 Copy</button>`;
+					idBox.style.display = 'inline-flex';
+				} else {
+					idBox.innerText = '❌ Error: No request number returned.';
+					idBox.style.display = 'inline-flex';
+				}
+			} catch(err) {
+				const idBox = document.getElementById('idBox');
+				submitBtn.disabled = false;
+				submitBtn.innerHTML = '🚀 Create Request';
+				idBox.innerText = '❌ Error submitting request.';
+				idBox.style.display = 'inline-flex';
+			}
 		});
-		const data = await res.json();
-		const idBox = document.getElementById('idBox');
-		submitBtn.disabled = false;
-		submitBtn.innerHTML = '🚀 Create Request';
-		// Accept simple_id, simpleId, or id for compatibility
-		const simpleId = data.simple_id || data.simpleId || data.id;
-		if (simpleId) {
-			idBox.innerHTML = `✅ Your request URL: <span id="requestSimpleIdValue">${simpleId}</span> <button class="copy-btn" onclick="copySimpleId()" title="Copy Number">📋 Copy</button>`;
-			idBox.style.display = 'inline-flex';
-		} else {
-			idBox.innerText = '❌ Error: No request number returned.';
-			idBox.style.display = 'inline-flex';
+
+		function copySimpleId() {
+			const idSpan = document.getElementById('requestSimpleIdValue');
+			if(!idSpan) return;
+			const text = idSpan.innerText;
+			navigator.clipboard.writeText(text).then(() => {
+				const btn = document.querySelector('.copy-btn');
+				btn.textContent = '✔';
+				setTimeout(() => { btn.textContent = '📋'; }, 1200);
+			});
 		}
-	} catch (err) {
-		const idBox = document.getElementById('idBox');
-		submitBtn.disabled = false;
-		submitBtn.innerHTML = '🚀 Create Request';
-		idBox.innerText = '❌ Error submitting request.';
-		idBox.style.display = 'inline-flex';
-	}
-});
 
-function copySimpleId() {
-	const idSpan = document.getElementById('requestSimpleIdValue');
-	if (!idSpan) return;
-	const text = idSpan.innerText;
-	navigator.clipboard.writeText(text).then(() => {
-		const btn = document.querySelector('.copy-btn');
-		btn.textContent = '✔';
-		setTimeout(() => { btn.textContent = '📋'; }, 1200);
-	});
-}
-
-document.getElementById('idForm').addEventListener('submit', async function(e) {
-	e.preventDefault();
-	const simpleId = document.getElementById('simpleId').value.trim();
-	if (!simpleId) return;
-	// Add loading state
-	const fetchBtn = document.getElementById('fetchBtn');
-	fetchBtn.disabled = true;
-	fetchBtn.innerHTML = '<span class="loading-spinner"></span>Fetching...';
-	document.getElementById('uploadStatus').style.display = 'none';
-	document.getElementById('uploadFields').innerHTML = '';
-	try {
-		const res = await fetch(N8N_FETCH_FIELDS_URL, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ simple_id: simpleId })
-		});
-		const data = await res.json();
-		const uploadFields = document.getElementById('uploadFields');
-		fetchBtn.disabled = false;
-		fetchBtn.innerHTML = '🔍 Fetch Fields';
-		uploadFields.innerHTML = '';
-		if (data.fields && Array.isArray(data.fields)) {
-			data.fields.forEach(field => {
-				const div = document.createElement('div');
-				div.innerHTML = `
+		document.getElementById('idForm').addEventListener('submit', async function(e) {
+			e.preventDefault();
+			const simpleId = document.getElementById('simpleId').value.trim();
+			if(!simpleId) return;
+			// Add loading state
+			const fetchBtn = document.getElementById('fetchBtn');
+			fetchBtn.disabled = true;
+			fetchBtn.innerHTML = '<span class="loading-spinner"></span>Fetching...';
+			document.getElementById('uploadStatus').style.display = 'none';
+			document.getElementById('uploadFields').innerHTML = '';
+			try {
+				const res = await fetch(N8N_FETCH_FIELDS_URL, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ simple_id: simpleId })
+				});
+				const data = await res.json();
+				const uploadFields = document.getElementById('uploadFields');
+				fetchBtn.disabled = false;
+				fetchBtn.innerHTML = '🔍 Fetch Fields';
+				uploadFields.innerHTML = '';
+				if(data.fields && Array.isArray(data.fields)) {
+					data.fields.forEach(field => {
+						const div = document.createElement('div');
+						div.innerHTML = `
 					<form class="single-upload-form" data-field="${field}">
 						<label><span style="font-weight:600;">${field}:</span> <input type="file" name="file" required></label>
 						<button type="submit">Upload</button>
 						<span class="upload-status"></span>
 					</form>
 				`;
-				uploadFields.appendChild(div);
-			});
-			// Attach event listeners to each upload form
-						document.querySelectorAll('.single-upload-form').forEach(form => {
-			form.addEventListener('submit', async function(ev) {
-				ev.preventDefault();
-				const field = this.getAttribute('data-field');
-				const fileInput = this.querySelector('input[type="file"]');
-				const statusSpan = this.querySelector('.upload-status');
-				if (!fileInput.files.length) {
-					statusSpan.textContent = 'Please select a file.';
-					statusSpan.classList.add('error');
-					return;
-				}
-				statusSpan.innerHTML = `<span class="loading-spinner"></span><span style="color:#2d6cdf;">Checking...</span>`;
-				statusSpan.classList.remove('error');
-				const uploadBtn = this.querySelector('button[type="submit"]');
-				uploadBtn.disabled = true;
-
-				// 1. Check if field is null via n8n webhook
-				let canUpload = false;
-				let existingUrl = '';
-				try {
-					const res = await fetch(N8N_CHECK_FIELD_URL, {
-						method: 'POST',
-						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({ simple_id: simpleId, field })
+						uploadFields.appendChild(div);
 					});
-					const data = await res.json();
-					// Expecting an array: [{ exists: true/false, url?: string }]
-					if (Array.isArray(data) && data.length > 0) {
-						if (data[0].exists === false) {
-							canUpload = true;
-						} else {
-							canUpload = false;
-							existingUrl = data[0].url || '';
-						}
-					} else {
-						// Fallback: if response is not as expected, allow upload
-						canUpload = true;
-					}
-				} catch (err) {
-					// If check fails, allow upload (or handle as you wish)
-					canUpload = true;
-				}
-
-				if (!canUpload) {
-					statusSpan.innerHTML = `⚠️ <span style=\"color:#c0392b;\">A file for \"${field}\" is already uploaded.</span> ${existingUrl ? `<a href=\"${existingUrl}\" target=\"_blank\">${fileIconSVG}View Existing File</a>` : ''}`;
-					uploadBtn.disabled = false;
-					return;
-				}
-
-				// 2. Proceed with upload as before
-				statusSpan.innerHTML = `<span class=\"loading-spinner\"></span><span style=\"color:#2d6cdf;\">Uploading...</span>`;
-				const formData = new FormData();
-				formData.append('simple_id', simpleId);
-				formData.append('field', field);
-				formData.append('file', fileInput.files[0]);
-				try {
-					const res = await fetch(N8N_UPLOAD_FILES_URL, {
-						method: 'POST',
-						body: formData
-					});
-					const data = await res.json();
-					uploadBtn.disabled = false;
-					if (data.success) {
-						if (data.url) {
-							statusSpan.innerHTML = `✅ <span style=\"color:#1b7e2b;\">Uploaded!</span> <a href=\"${data.url}\" target=\"_blank\">${fileIconSVG}View File</a>`;
+					// Attach event listeners to each upload form
+					document.querySelectorAll('.single-upload-form').forEach(form => {
+						form.addEventListener('submit', async function(ev) {
+							ev.preventDefault();
+							const field = this.getAttribute('data-field');
+							const fileInput = this.querySelector('input[type="file"]');
+							const statusSpan = this.querySelector('.upload-status');
+							if(!fileInput.files.length) {
+								statusSpan.textContent = 'Please select a file.';
+								statusSpan.classList.add('error');
+								return;
+							}
+							statusSpan.innerHTML = `<span class="loading-spinner"></span><span style="color:#2d6cdf;">Checking...</span>`;
 							statusSpan.classList.remove('error');
-						} else {
-							statusSpan.innerHTML = `✅ <span style=\"color:#1b7e2b;\">Uploaded!</span>`;
-							statusSpan.classList.remove('error');
-						}
-					} else {
-						statusSpan.innerHTML = `❌ <span style=\"color:#c0392b;\">${data.message ? `Upload failed: ${data.message}` : 'Upload failed.'}</span>`;
-						statusSpan.classList.add('error');
-					}
-				} catch (err) {
-					uploadBtn.disabled = false;
-					statusSpan.innerHTML = `❌ <span style=\"color:#c0392b;\">File Already uploaded.</span>`;
-					statusSpan.classList.add('error');
-				}
-			});
+							const uploadBtn = this.querySelector('button[type="submit"]');
+							uploadBtn.disabled = true;
+
+							// 1. Check if field is null via n8n webhook
+							let canUpload = false;
+							let existingUrl = '';
+							try {
+								const res = await fetch(N8N_CHECK_FIELD_URL, {
+									method: 'POST',
+									headers: { 'Content-Type': 'application/json' },
+									body: JSON.stringify({ simple_id: simpleId, field })
+								});
+								const data = await res.json();
+								// Expecting an array: [{ exists: true/false, url?: string }]
+								if(Array.isArray(data) && data.length > 0) {
+									if(data[0].exists === false) {
+										canUpload = true;
+									} else {
+										canUpload = false;
+										existingUrl = data[0].url || '';
+									}
+								} else {
+									// Fallback: if response is not as expected, allow upload
+									canUpload = true;
+								}
+							} catch(err) {
+								// If check fails, allow upload (or handle as you wish)
+								canUpload = true;
+							}
+
+							if(!canUpload) {
+								statusSpan.innerHTML = `⚠️ <span style=\"color:#c0392b;\">A file for \"${field}\" is already uploaded.</span> ${existingUrl ? `<a href=\"${existingUrl}\" target=\"_blank\">${fileIconSVG}View Existing File</a>` : ''}`;
+								uploadBtn.disabled = false;
+								return;
+							}
+
+							// 2. Proceed with upload as before
+							statusSpan.innerHTML = `<span class=\"loading-spinner\"></span><span style=\"color:#2d6cdf;\">Uploading...</span>`;
+							const formData = new FormData();
+							formData.append('simple_id', simpleId);
+							formData.append('field', field);
+							formData.append('file', fileInput.files[0]);
+							try {
+								const res = await fetch(N8N_UPLOAD_FILES_URL, {
+									method: 'POST',
+									body: formData
+								});
+								const data = await res.json();
+								uploadBtn.disabled = false;
+								if(data.success) {
+									if(data.url) {
+										statusSpan.innerHTML = `✅ <span style=\"color:#1b7e2b;\">Uploaded!</span> <a href=\"${data.url}\" target=\"_blank\">${fileIconSVG}View File</a>`;
+										statusSpan.classList.remove('error');
+									} else {
+										statusSpan.innerHTML = `✅ <span style=\"color:#1b7e2b;\">Uploaded!</span>`;
+										statusSpan.classList.remove('error');
+									}
+								} else {
+									statusSpan.innerHTML = `❌ <span style=\"color:#c0392b;\">${data.message ? `Upload failed: ${data.message}` : 'Upload failed.'}</span>`;
+									statusSpan.classList.add('error');
+								}
+							} catch(err) {
+								uploadBtn.disabled = false;
+								statusSpan.innerHTML = `❌ <span style=\"color:#c0392b;\">File Already uploaded.</span>`;
+								statusSpan.classList.add('error');
+							}
 						});
-		} else {
-			uploadFields.innerHTML = '<div style="text-align: center; padding: 2em; color: #64748b;">❌ No fields found for this request number.</div>';
-		}
-	} catch (err) {
-		fetchBtn.disabled = false;
-		fetchBtn.innerHTML = '🔍 Fetch Fields';
-		document.getElementById('uploadStatus').innerText = '❌ Error fetching fields.';
-		document.getElementById('uploadStatus').style.display = 'inline-flex';
-	}
-});
-</script>
+					});
+				} else {
+					uploadFields.innerHTML = '<div style="text-align: center; padding: 2em; color: #64748b;">❌ No fields found for this request number.</div>';
+				}
+			} catch(err) {
+				fetchBtn.disabled = false;
+				fetchBtn.innerHTML = '🔍 Fetch Fields';
+				document.getElementById('uploadStatus').innerText = '❌ Error fetching fields.';
+				document.getElementById('uploadStatus').style.display = 'inline-flex';
+			}
+		});
+	</script>
 </body>
+
 </html>
+
 </html>
